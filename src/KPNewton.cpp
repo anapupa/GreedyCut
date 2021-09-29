@@ -32,6 +32,7 @@ KPNewton::KPNewton(Mesh& m)
 #elif USE_MKL_PARDISO
 	solver = new MKLPardisoSolver();
 #elif USE_EIGEN
+    std::cout << "using: eigen" << std::endl;
 	solver = new EigenLinSolver();
 #endif 
 }
