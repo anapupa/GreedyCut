@@ -271,7 +271,7 @@ void Algorithm::UpdateNeighbourhood(MeshCache& MC, int k, int v)
 	{
 		if (MC.Neighbour[v].size() == 0)
 		{
-			MC.Neighbour[v].resize(MC.NVertices, INT_MAX);
+			MC.Neighbour[v].resize(MC.NVertices, std::numeric_limits<int>::max());
 			MC.Neighbour[v][v] = 0;
 			for (auto a : MC.VV[v])
 				MC.Neighbour[v][a] = 1;

@@ -1,4 +1,3 @@
-#include <io.h>
 #include <time.h>
 #include <string>
 #include "Auxiliary.h"

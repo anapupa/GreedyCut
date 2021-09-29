@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.7)
 project(GreedyCut)
+
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     message(STATUS "the compiler is gcc")
     SET(CMAKE_CXX_FLAGS "-O2")
@@ -51,6 +54,7 @@ if(CMAKE_SYSTEM_NAME MATCHES "Windows")
     endif()
 
 elseif(CMAKE_SYSTEM_NAME MATCHES "Linux")
+    find_package(Eigen3 3.3 REQUIRED NO_MODULE)
     message(STATUS "the OS is Linux")
 elseif(CMAKE_SYSTEM_NAME MATCHES "Darwin")
     message(STATUS "the OS is Darwin")
@@ -75,7 +79,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     target_link_libraries(${PROJECT_NAME} debug OpenMeshToolsd debug OpenMeshCored)
     target_link_libraries(${PROJECT_NAME} optimized OpenMeshTools optimized OpenMeshCore)
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-    target_link_libraries(${PROJECT_NAME}  OpenMeshTools OpenMeshCore)
+    target_link_libraries(${PROJECT_NAME}  OpenMeshTools OpenMeshCore Eigen3::Eigen)
 endif()
 
 target_link_libraries(${PROJECT_NAME} ${SOLVER_LIBRARY})

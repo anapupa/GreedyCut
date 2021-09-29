@@ -3,10 +3,12 @@
 #include "Auxiliary.h"
 #include <Eigen/Core>
 #include <Eigen/Geometry>
-#include"Eigen\src\Eigenvalues\EigenSolver.h"
-#include"Eigen/Dense"
-#include"Eigen/Sparse"
-#include"Eigen/SparseLU"
+
+//#include "Eigen\src\Eigenvalues\EigenSolver.h"
+#include <Eigen/Eigenvalues>
+#include "Eigen/Dense"
+#include "Eigen/Sparse"
+#include "Eigen/SparseLU"
 #include "Eigen/SVD"
 #include "Solver/Solver.h"
 

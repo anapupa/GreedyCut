@@ -19,7 +19,7 @@ struct Option
 	double Trimming_Rate = 0.01;
 	int Max_AddCount = 30;
 
-	Option::Option(std::string modelPath, std::string optPath);
+	Option(std::string modelPath, std::string optPath);
 };
 
 class Algorithm
